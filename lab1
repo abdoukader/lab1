@@ -1,0 +1,27 @@
+import math
+
+
+def calc_distance(point1, point2):
+
+    distances = []
+
+    for p1, p2 in zip(point1, point2):
+        distance = sum((x - y) ** 2 for x, y in zip(p1, p2)) ** 0.5
+        distances.append(distance)
+    return distances
+
+def my_map(func, arg1, arg2):
+    print("Calling function calc_distance with arguments", arg1, "and", arg2, ".")
+    return calc_distance(arg1, arg2)
+
+point1 = [(1.0, 1.0, 1.0), (2.0, 2.0, 2.0), (3.0, 3.0, 3.0)]
+point2 = [(4.0, 4.0, 4.0), (5.0, 5.0, 5.0), (6.0, 6.0, 6.0)]
+
+print(my_map(calc_distance, point1, point2))
+
+
+
+#le resultat
+
+#Calling function calc_distance with arguments [(1.0, 1.0, 1.0), (2.0, 2.0, 2.0), (3.0, 3.0, 3.0)] and [(4.0, 4.0, 4.0), (5.0, 5.0, 5.0), (6.0, 6.0, 6.0)] .
+#[5.196152422706632, 5.196152422706632, 5.196152422706632]
